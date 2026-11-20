@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="PixelForge is a free online image compressor by Ivan Productions. Compress images, adjust quality, resize, and convert JPG, PNG, and WebP files directly in your browser.">
+<meta name="keywords" content="online image compressor, compress image, image optimizer, WebP converter, JPG compressor, PNG converter, resize images, PixelForge, Ivan Productions">
+<meta name="author" content="Ivan Productions">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PixelForge — Free Online Image Compressor">
+<meta property="og:description" content="Compress, resize, and convert images with PixelForge by Ivan Productions. Free browser-based image optimization.">
+<meta property="og:site_name" content="PixelForge by Ivan Productions">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PixelForge — Free Online Image Compressor">
+<meta name="twitter:description" content="Compress, resize, and convert images directly in your browser.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="manifest" href="site.webmanifest">
+<title>PixelForge — Free Online Image Compressor | Ivan Productions</title>
+<style>
+:root{--bg:#07111f;--panel:#0d1b2b;--panel2:#102338;--line:#1c3851;--cyan:#35d8f2;--blue:#527bff;--text:#e8f5ff;--muted:#8ba5ba;--green:#42e6a4;--danger:#ff6e83}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#12314a 0,transparent 38%),radial-gradient(ellipse at 90% 20%,#14274a 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.5 Inter,Segoe UI,Arial,sans-serif;min-height:100vh}
+header{border-bottom:1px solid var(--line);background:#07111fdc;backdrop-filter:blur(12px);position:sticky;top:0;z-index:5}.top{max-width:1200px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:15px}.brand{display:flex;align-items:center;gap:12px}.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#06121f;font-weight:900;font-size:20px;box-shadow:0 0 25px #35d8f255}.brand h1{font-size:18px;letter-spacing:2px;margin:0}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}.dev{color:var(--cyan);font-size:12px;letter-spacing:1px;border:1px solid #35d8f255;padding:7px 11px;border-radius:20px}
+main{max-width:1200px;margin:34px auto;padding:0 24px 50px}.intro{margin-bottom:24px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:3px;font-weight:700}.intro h2{font-size:clamp(26px,4vw,39px);margin:7px 0 5px;line-height:1.15}.intro p{color:var(--muted);margin:0}.layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:20px}.panel{background:linear-gradient(160deg,#102238ed,#0a1726f2);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 18px 50px #0003}.panel h3{margin:0 0 15px;font-size:14px;letter-spacing:1px}.drop{border:1px dashed #34718e;border-radius:14px;min-height:220px;display:flex;align-items:center;justify-content:center;text-align:center;padding:25px;cursor:pointer;background:linear-gradient(135deg,#10283a88,#0c1b2d88);transition:.2s}.drop:hover,.drop.drag{border-color:var(--cyan);background:#12324a}.drop .glyph{font-size:40px;color:var(--cyan);line-height:1}.drop strong{display:block;margin:12px 0 4px}.drop span{color:var(--muted);font-size:12px}.drop input{display:none}.preview{display:none;margin-top:16px}.preview img{display:block;max-width:100%;max-height:390px;margin:auto;border-radius:10px;object-fit:contain;background:#050b12}.fileline{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:12px}.settings{display:grid;gap:18px}.field label{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:#c8ddeb;margin-bottom:8px}.field output{color:var(--cyan);font-weight:700}.field input[type=range]{width:100%;accent-color:var(--cyan)}select,input[type=number]{width:100%;background:#071523;color:var(--text);border:1px solid var(--line);padding:11px;border-radius:9px;outline:none}select:focus,input:focus{border-color:var(--cyan)}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.check{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:12px}.check input{accent-color:var(--cyan)}.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:10px;padding:12px 16px;font-weight:800;cursor:pointer;transition:.2s}.primary{background:linear-gradient(100deg,var(--cyan),#6a8cff);color:#04121e;box-shadow:0 6px 20px #35d8f233;flex:1}.secondary{background:#142a40;color:var(--text);border:1px solid var(--line)}.btn:hover{transform:translateY(-1px);filter:brightness(1.1)}.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:17px}.stat{background:#081624;border:1px solid var(--line);padding:12px;border-radius:10px;min-width:0}.stat small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:1px}.stat b{display:block;font-size:17px;margin-top:4px;overflow-wrap:anywhere}.positive{color:var(--green)}.progress{height:5px;background:#142b40;border-radius:10px;overflow:hidden;margin-top:12px;display:none}.progress i{height:100%;width:0;display:block;background:linear-gradient(90deg,var(--cyan),var(--blue));transition:width .2s}.hint{font-size:11px;color:var(--muted);margin-top:13px}.queue{margin-top:20px}.queue-list{display:grid;gap:8px}.queue-item{display:flex;justify-content:space-between;gap:12px;align-items:center;background:#091827;border:1px solid var(--line);padding:10px 12px;border-radius:9px;font-size:12px}.queue-item span{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.queue-item button{background:none;border:0;color:var(--danger);cursor:pointer}.footer{text-align:center;color:#607b91;font-size:11px;margin-top:30px;letter-spacing:1px}.tag{color:var(--cyan)}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.top{padding:13px 16px}main{padding:0 16px 35px;margin-top:25px}}@media(max-width:450px){.dev{font-size:9px;padding:6px}.stats{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="top"><div class="brand"><div class="logo">P</div><div><h1>PIXELFORGE</h1><small>IMAGE OPTIMIZATION SYSTEM</small></div></div><div class="dev">DEVELOPED BY IVAN PRODUCTIONS</div></div></header>
+<main>
+<section class="intro"><div class="eyebrow">DIGITAL ASSET TOOLKIT / 01</div><h2>Compress. Optimize. Export.</h2><p>Reduce image file size, adjust quality, and convert formats — right in your browser.</p></section>
+<div class="layout">
+<section class="panel">
+<h3>01 / IMAGE INPUT</h3>
+<label class="drop" id="drop">
+<input id="file" type="file" accept="image/*" multiple>
+<div><div class="glyph">⌁</div><strong>Drop images here or click to browse</strong><span>Supports JPG, PNG, WebP, GIF (first frame), BMP and other browser-readable formats</span></div>
+</label>
+<div class="preview" id="preview"><img id="imagePreview" alt="Selected image preview"><div class="fileline"><span id="fileName">—</span><span id="dimensions">—</span></div></div>
+<div class="stats">
+<div class="stat"><small>Original size</small><b id="originalSize">—</b></div>
+<div class="stat"><small>Estimated output</small><b id="outputSize">—</b></div>
+<div class="stat"><small>Size reduction</small><b id="reduction">—</b></div>
+</div>
+<div class="progress" id="progress"><i id="progressBar"></i></div>
+<div class="queue" id="queue" hidden><h3>02 / BATCH QUEUE</h3><div class="queue-list" id="queueList"></div></div>
+</section>
+<aside class="panel">
+<h3>02 / OPTIMIZATION SETTINGS</h3>
+<div class="settings">
+<div class="field"><label for="quality">Image quality <output id="qualityValue">75%</output></label><input id="quality" type="range" min="1" max="100" value="75"></div>
+<div class="field"><label for="format">Output format</label><select id="format"><option value="image/webp">WebP — smaller files (recommended)</option><option value="image/jpeg">JPEG — photos</option><option value="image/png">PNG — lossless / transparency</option></select></div>
+<div class="two">
+<div class="field"><label for="width">Max width (px)</label><input id="width" type="number" min="1" max="20000" placeholder="Original"></div>
+<div class="field"><label for="height">Max height (px)</label><input id="height" type="number" min="1" max="20000" placeholder="Original"></div>
+</div>
+<label class="check"><input id="keepRatio" type="checkbox" checked> Keep original aspect ratio</label>
+<label class="check"><input id="metadata" type="checkbox" checked> Strip metadata (browser canvas export)</label>
+<div class="field"><label for="suffix">Filename suffix</label><input id="suffix" type="text" value="_optimized" maxlength="30"></div>
+<div class="actions"><button class="btn primary" id="compress" disabled>⚡ COMPRESS IMAGE</button><button class="btn secondary" id="reset">RESET</button></div>
+<button class="btn secondary" id="download" disabled>↓ DOWNLOAD RESULT</button>
+<p class="hint">Tip: WebP often gives a smaller file than JPEG at similar visual quality. PNG is lossless; its quality slider does not apply. Compression happens locally — your images are not uploaded.</p>
+</div>
+</aside>
+</div>
+<div class="footer">PIXELFORGE v1.0 <span class="tag">◆</span> IVAN PRODUCTIONS · LOCAL IMAGE PROCESSING</div>
+</main>
+<script>
+(() => {
+const $ = id => document.getElementById(id);
+let files = [], active = 0, resultBlob = null, resultName = '';
+const fmt = n => n < 1024 ? n+' B' : n < 1048576 ? (n/1024).toFixed(1)+' KB' : (n/1048576).toFixed(2)+' MB';
+const fileInput=$('file'), drop=$('drop'), quality=$('quality');
+quality.addEventListener('input',()=>{$('qualityValue').textContent=quality.value+'%';updateEstimate()});
+['format','width','height','keepRatio'].forEach(id=>$(id).addEventListener('input',updateEstimate));
+drop.addEventListener('click',()=>fileInput.click());
+fileInput.addEventListener('change',e=>loadFiles([...e.target.files]));
+['dragover','dragenter'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));
+drop.addEventListener('drop',e=>loadFiles([...e.dataTransfer.files].filter(f=>f.type.startsWith('image/'))));
+function loadFiles(list){
+ const valid=list.filter(f=>f.type.startsWith('image/'));
+ if(!valid.length)return;
+ files=valid;active=0;resultBlob=null;$('download').disabled=true;$('compress').disabled=false;
+ renderActive();renderQueue();updateEstimate();
+}
+function renderActive(){
+ const f=files[active];if(!f)return;
+ $('preview').style.display='block';$('imagePreview').src=URL.createObjectURL(f);
+ $('fileName').textContent=f.name;$('originalSize').textContent=fmt(f.size);
+ const im=new Image();im.onload=()=>{$('dimensions').textContent=im.naturalWidth+' × '+im.naturalHeight+' px';updateEstimate()};im.src=$('imagePreview').src;
+}
+function renderQueue(){
+ $('queue').hidden=files.length<2;$('queueList').innerHTML='';
+ files.forEach((f,i)=>{const row=document.createElement('div');row.className='queue-item';const name=document.createElement('span');name.textContent=(i===active?'▶ ':'')+f.name+' · '+fmt(f.size);const btn=document.createElement('button');btn.textContent='Select';btn.onclick=()=>{active=i;resultBlob=null;$('download').disabled=true;renderActive();renderQueue();updateEstimate()};row.append(name,btn);$('queueList').append(row)});
+}
+function getDims(w,h){
+ let mw=parseInt($('width').value)||w,mh=parseInt($('height').value)||h;
+ if($('keepRatio').checked){const scale=Math.min(1,mw/w,mh/h);return [Math.max(1,Math.round(w*scale)),Math.max(1,Math.round(h*scale))]}
+ return [Math.min(w,mw),Math.min(h,mh)];
+}
+function updateEstimate(){
+ if(!files[active])return;
+ const f=files[active];const img=$('imagePreview');
+ if(!img.naturalWidth){$('outputSize').textContent='Calculating…';return}
+ const [w,h]=getDims(img.naturalWidth,img.naturalHeight);
+ $('outputSize').textContent='~'+fmt(Math.round(f.size*(w*h/(img.naturalWidth*img.naturalHeight))*($('format').value==='image/png'?1:.55+Number(quality.value)/220)));
+ $('reduction').textContent='Estimate';$('reduction').className='';
+}
+$('compress').addEventListener('click',async()=>{
+ if(!files.length)return;
+ const f=files[active],img=new Image();img.src=URL.createObjectURL(f);
+ $('compress').disabled=true;$('progress').style.display='block';$('progressBar').style.width='25%';
+ try{
+ await img.decode();const [w,h]=getDims(img.naturalWidth,img.naturalHeight);
+ const canvas=document.createElement('canvas');canvas.width=w;canvas.height=h;
+ const ctx=canvas.getContext('2d',{alpha:$('format').value!=='image/jpeg'});
+ if($('format').value==='image/jpeg'){ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h)}
+ ctx.drawImage(img,0,0,w,h);$('progressBar').style.width='70%';
+ const type=$('format').value,qualityNum=type==='image/png'?undefined:Number(quality.value)/100;
+ resultBlob=await new Promise(resolve=>canvas.toBlob(resolve,type,qualityNum));
+ if(!resultBlob)throw new Error('This format is not supported by your browser.');
+ const ext=type==='image/jpeg'?'jpg':type==='image/png'?'png':'webp';
+ const base=f.name.replace(/\.[^.]+$/,'');resultName=base+($('suffix').value||'')+'.'+ext;
+ $('outputSize').textContent=fmt(resultBlob.size);
+ const diff=(1-resultBlob.size/f.size)*100;
+ $('reduction').textContent=(diff>=0?diff.toFixed(1)+'% smaller':Math.abs(diff).toFixed(1)+'% larger');
+ $('reduction').className=diff>=0?'positive':'';
+ $('progressBar').style.width='100%';$('download').disabled=false;
+ }catch(err){alert('Could not compress image: '+err.message)}
+ finally{$('compress').disabled=false;setTimeout(()=>$('progress').style.display='none',700)}
+});
+$('download').addEventListener('click',()=>{
+ if(!resultBlob)return;const url=URL.createObjectURL(resultBlob),a=document.createElement('a');a.href=url;a.download=resultName;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+$('reset').addEventListener('click',()=>{
+ files=[];active=0;resultBlob=null;fileInput.value='';$('preview').style.display='none';$('queue').hidden=true;$('queueList').innerHTML='';
+ ['originalSize','outputSize','reduction'].forEach(id=>$(id).textContent='—');$('compress').disabled=true;$('download').disabled=true;$('width').value='';$('height').value='';$('quality').value=75;$('qualityValue').textContent='75%';$('progress').style.display='none';
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "PixelForge — Ivan Productions",
+  "short_name": "PixelForge",
+  "description": "Free browser-based image compressor and optimizer.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#07111f",
+  "theme_color": "#07111f",
+  "icons": []
+}
