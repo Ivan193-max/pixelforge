@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://ivan193-max.github.io/pixelforge/sitemap.xml
